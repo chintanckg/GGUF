@@ -4,7 +4,7 @@ import os
 
 class InferlessPythonModel:
     def initialize(self):
-        nfs_volume = os.getenv("NFS_VOLUME") #"test_volume_region_1"
+        nfs_volume = "test_volume_region_2"
         if os.path.exists(nfs_volume + "/usrs_classification_16bit_v4.F16.gguf") == False :
             cache_file = hf_hub_download(
                                 repo_id="ushuradmin/usrs_classification_16bit_v4_gguf",
