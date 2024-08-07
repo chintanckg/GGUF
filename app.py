@@ -9,7 +9,9 @@ class InferlessPythonModel:
             cache_file = hf_hub_download(
                                 repo_id="ushuradmin/usrs_classification_16bit_v4_gguf",
                                 filename="usrs_classification_16bit_v4.F16.gguf",
-                                local_dir=nfs_volume)
+                                local_dir=nfs_volume,
+                                token="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"
+            )
         self.llm = Llama(
             model_path=f"{nfs_volume}/usrs_classification_16bit_v4.F16.gguf",
             main_gpu=0,
