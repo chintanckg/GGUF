@@ -1,6 +1,6 @@
 version: 1.0.0
 
-name: Llama-3.1-8B-Instruct-GGUF
+name: usrs_classification_16bit_v4_gguf
 import_source: GIT
 
 # you can choose the options between ONNX, TENSORFLOW, PYTORCH
@@ -19,7 +19,7 @@ configuration:
   custom_volume_id: ''
   custom_volume_name: ''
 
-  gpu_type: T4
+  gpu_type: A100
   inference_time: '180'
   is_dedicated: true
   is_serverless: false
@@ -29,7 +29,7 @@ configuration:
 env:
   # Add your environment variables here
   # ENV: 'PROD'
-  NFS_VOLUME: '<YOUR_NFS_VOLUME_MOUNT_PATH>'
+  NFS_VOLUME: 'test_volume_region_1'
 secrets:
   # Add your secret ids here you can find it by running `inferless secrets list`
   # - 65723205-ce21-4392-a10b-3tf00c58988c
