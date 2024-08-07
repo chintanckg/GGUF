@@ -4,14 +4,14 @@ import os
 
 class InferlessPythonModel:
     def initialize(self):
-        nfs_volume = os.getenv("NFS_VOLUME")
-        if os.path.exists(nfs_volume + "/Meta-Llama-3.1-8B-Instruct-Q8_0.gguf") == False :
+        nfs_volume = "test_volume_region_1"
+        if os.path.exists(nfs_volume + "/usrs_classification_16bit_v4.F16.gguf") == False :
             cache_file = hf_hub_download(
-                                repo_id="bartowski/Meta-Llama-3.1-8B-Instruct-GGUF",
-                                filename="Meta-Llama-3.1-8B-Instruct-Q8_0.gguf",
+                                repo_id="ushuradmin/usrs_classification_16bit_v4_gguf",
+                                filename="usrs_classification_16bit_v4.F16.gguf",
                                 local_dir=nfs_volume)
         self.llm = Llama(
-            model_path=f"{nfs_volume}/Meta-Llama-3.1-8B-Instruct-Q8_0.gguf",
+            model_path=f"{nfs_volume}/usrs_classification_16bit_v4.F16.gguf",
             main_gpu=0,
             n_gpu_layers=-1)
 
